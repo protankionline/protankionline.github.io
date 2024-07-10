@@ -47,7 +47,7 @@
                             "numFrames"
                         ]
                     },
-                    "resistanses": {
+                    "resistances": {
                         "type": "array",
                         "items": {
                             "type": "object",
@@ -85,8 +85,7 @@
                 },
                 "required": [
                     "id",
-                    "file",
-                    "resistanses"
+                    "file"
                 ]
             }
         }
