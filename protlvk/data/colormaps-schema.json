@@ -1,0 +1,103 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+        "defaultHull": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "id"
+            ]
+        },
+        "data": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    },
+                    "file": {
+                        "type": "string"
+                    },
+                    "frame": {
+                        "type": "object",
+                        "properties": {
+                            "fps": {
+                                "type": "integer"
+                            },
+                            "frameHeight": {
+                                "type": "integer"
+                            },
+                            "frameWidth": {
+                                "type": "integer"
+                            },
+                            "numFrames": {
+                                "type": "integer"
+                            }
+                        },
+                        "required": [
+                            "fps",
+                            "frameHeight",
+                            "frameWidth",
+                            "numFrames"
+                        ]
+                    },
+                    "resistanses": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "weapon": {
+                                    "type": "string",
+                                    "enum": [
+                                        "all",
+                                        "flamethrower",
+                                        "freeze",
+                                        "isida",
+                                        "machinegun",
+                                        "mine",
+                                        "railgun",
+                                        "ricochet",
+                                        "rocketlauncher",
+                                        "shaft",
+                                        "shtogun",
+                                        "smoky",
+                                        "thunder",
+                                        "twins"
+                                    ]
+                                },
+                                "value": {
+                                    "type": "integer",
+                                    "maximum": 100
+                                }
+                            },
+                            "required": [
+                                "weapon",
+                                "value"
+                            ]
+                        }
+                    }
+                },
+                "required": [
+                    "id",
+                    "file",
+                    "resistanses"
+                ]
+            }
+        }
+    },
+    "required": [
+        "defaultColormap",
+        "data"
+    ],
+    "dependencies": {
+        "defaultColormap": [
+            "data"
+        ]
+    }
+}
